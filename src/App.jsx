@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Square({ value, onSquareClick }) {
+function Square({value, onSquareClick}) {
   return (
     <button className="square" onClick={onSquareClick}>
       {value}
@@ -57,7 +57,6 @@ export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
   const currentSquares = history[currentMove];
-  
 
   function handlePlay(nextSquares) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
@@ -71,8 +70,6 @@ export default function Game() {
     setXIsNext(nextMove % 2 === 0);
   }
 
-  
-
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
@@ -82,7 +79,7 @@ export default function Game() {
     }
     return (
       <li key={move}>
-          <button onClick={() => jumpTo(move)}>{description}</button>
+        <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
