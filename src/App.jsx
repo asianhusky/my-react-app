@@ -1,7 +1,21 @@
+import { useState } from 'react';
 
-// new square compoenent repetition
-function Square({ value }) {
-  return <button className="square">{value}</button>;
+function Square() {
+  const [value, setValue] = useState(null);
+
+  function handleClick() {
+    setValue('X');
+  }
+
+
+  return (
+    <button
+      className="square"
+      onClick={handleClick}
+    >
+      {value}
+    </button>
+  );
 }
 
 
